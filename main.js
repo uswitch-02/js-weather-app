@@ -1,2 +1,4 @@
 const weatherForm = document.getElementById("weather-form")
-console.log(weatherForm)
+const cityInput = document.getElementById("city-input")
+const weatherResults = document.getElementById("weather-results")
+
