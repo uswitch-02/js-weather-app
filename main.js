@@ -5,12 +5,12 @@ const weatherResults = document.getElementById("weather-results")
 fetch("https://api.weatherapi.com/v1/current.json?key=210b8e4818a4439694091142232207 &q=London&aqi=no")
     .then(response => response.json())
     .then(jsonData => weatherResults.innerHTML=`
-                <div class="results-country">Japan</div>
-                <div class="results-city">Tokyo</div>
-                <div class="results-temp">28<span>℃</span></div>
+                <div class="results-country">${jsonData.location.country}</div>
+                <div class="results-city">${josnDate.location.name}</div>
+                <div class="results-temp">${jsonData.current.temp_c}</div>
                 <div class="results-condition">
-                  <img src="./sunny-icon.png" alt="icon">
-                  <span>Sunny</span>
-                </div> 
+                  <img src="" alt="icon">
+                  <span>${jsonData.current.condition.text}</span>
+                </div>
                 `
     )
