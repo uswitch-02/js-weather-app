@@ -16,3 +16,7 @@ fetch("https://api.weatherapi.com/v1/current.json?key=210b8e4818a443969409114223
                 `
     )
 }
+
+
+
+getWeather()
