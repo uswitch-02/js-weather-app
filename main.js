@@ -3,14 +3,13 @@ const cityInput = document.getElementById("city-input")
 const weatherResults = document.getElementById("weather-results")
 
 weatherForm.addEventListener("submit",(e)=>{
-  console.log(e)
   e.preventDefault()
-  getWeather()
+  getWeather(cityInput.value)
 
 })
 
-const getWeather = () => {
-fetch("https://api.weatherapi.com/v1/current.json?key=210b8e4818a4439694091142232207 &q=London&aqi=no")
+const getWeather = (city) => {
+fetch(`https://api.weatherapi.com/v1/current.json?key=210b8e4818a4439694091142232207 &q=${city}&aqi=no`)
     .then(response => response.json())
     .then(jsonData => weatherResults.innerHTML=`
                 <div class="results-country">${jsonData.location.country}</div>
