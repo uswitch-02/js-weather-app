@@ -2,6 +2,13 @@ const weatherForm = document.getElementById("weather-form")
 const cityInput = document.getElementById("city-input")
 const weatherResults = document.getElementById("weather-results")
 
+weatherForm.addEventListener("submit",(e)=>{
+  console.log(e)
+  e.preventDefault()
+  getWeather()
+
+})
+
 const getWeather = () => {
 fetch("https://api.weatherapi.com/v1/current.json?key=210b8e4818a4439694091142232207 &q=London&aqi=no")
     .then(response => response.json())
@@ -19,4 +26,3 @@ fetch("https://api.weatherapi.com/v1/current.json?key=210b8e4818a443969409114223
 
 
 
-getWeather()
